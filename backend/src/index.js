@@ -8,7 +8,8 @@ const app = express();
 
 const PORT = process.env.PORT;
 
-app.use("/api/users",userRoutes)
+app.use("/api/users",userRoutes);
+
 app.listen(PORT,() => {
     console.log("Server is running on port 5000")
 })
