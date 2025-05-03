@@ -6,6 +6,7 @@ import adminRoutes from "./routes/admin.route.js"
 import songRoutes from "./routes/song.route.js"
 import albumRoutes from "./routes/album.route.js"
 import statsRoutes from "./routes/stats.route.js"
+import { connectDB } from "./lib/db.js";
 
 dotenv.config();
 
@@ -21,5 +22,6 @@ app.use("/api/albums",albumRoutes);
 app.use("/api/stats",statsRoutes); 
 
 app.listen(PORT,() => {
-    console.log("Server is running on port 5000")
+    console.log("Server is running on port" + PORT);
+    connectDB();
 })
